@@ -66,6 +66,7 @@ class FeatureSpider(scrapy.Spider):
 
 	def parse_pagina_vinculada(self, response):
 		date = response.css(".updated-date::text").extract_first()
+		owner = response.css(".owner-data-info a::text").extract_first() 
 		description = response.css(".description-body::text").extract_first()
 		#Datos basicos
 		price_m2 = response.css(".basicdata-info .basicdata-item:nth-child(5)::text").extract_first()
@@ -91,6 +92,7 @@ class FeatureSpider(scrapy.Spider):
 
 
 		dataObject = {
+			"owner": owner,
 			"address": address,
 			"price": price,
 			"price_m2": price_m2,
