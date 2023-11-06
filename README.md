@@ -34,15 +34,14 @@ result.json
         "address": "El Camp de l'Arpa del Clot (Distrito Sant Mart\u00ed. Barcelona Capital)",
         "price": "1.550€",
         "price_m2": "30€",
-        "bathrooms": "1",
+        "bathrooms": "1 Baño",
         "size_construction": ": 40m2",
-        "size": "1",
-        "rooms": "1",
+        "size": "34m2",
+        "rooms": "1 Hab",
         "description": "Información relevante",
         "planta": "Planta baja",
         "exterior": "Terraza",
         "preservation": "En buen estado",
-        "floor_type": "Atico",
         "last_updated": "Actualizado el 05/11/2023"
       }
   ]
