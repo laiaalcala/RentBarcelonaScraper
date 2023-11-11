@@ -8,6 +8,17 @@ Este repositorio es un proyecto desarrollado con Scrapy (https://scrapy.org/) en
 
 El proceso de extracción de datos es exhaustivo, ya que abarca la recopilación de información de toda la plataforma web. Como resultado, se generan dos archivos de salida: uno en formato JSON y otro en formato CSV. Estos archivos incluyen una variedad de detalles relevantes sobre las ofertas de alquiler de viviendas, como precios, ubicaciones, características de las propiedades, información del propietario, y mucho más.
 
+## Requisitos
+* python 3.9+
+* pip
+* Scrapy 2.11+
+* Funciona en Linux, Windows, macOS.
+
+## Instalación
+Ejecutar para instalar paquetes pip:
+```bash
+pip install -r requirements.txt
+```
 ## Ejecución
 Para ejecutar el proyecto es necesario tener instalado las siguientes librerias (Paquetes):
 ```python
@@ -45,4 +56,11 @@ result.json
         "last_updated": "Actualizado el 05/11/2023"
       }
   ]
+```
+
+## Nota
+
+Para la ejecución del proyecto, es importante tener en cuenta el path donde se encuentra el proyecto
+```bash
+  /source/RentBarcelonaScraper
 ```
