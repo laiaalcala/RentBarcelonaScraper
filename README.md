@@ -60,7 +60,7 @@ result.json
 
 ## Nota
 
-Para la ejecución del proyecto, es importante tener en cuenta el path donde se encuentra el proyecto
+Para la ejecución del proyecto, es importante tener en cuenta el path donde se encuentra
 ```bash
   /source/RentBarcelonaScraper
 ```
