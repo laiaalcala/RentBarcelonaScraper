@@ -1,7 +1,9 @@
 import scrapy 
+import re 
 from scrapy.http import TextResponse
 import json
 import csv
+#from selenium import webdriver
 
 class FeatureSpider(scrapy.Spider):
 	name= 'features' 
@@ -12,6 +14,11 @@ class FeatureSpider(scrapy.Spider):
 		containers = response.css(".ad-preview").extract()
 		next_page = response.css('.pagination__next a::attr(href)').extract_first()
 		for container in containers:
+			# Encuentra un elemento en la página por su selector CSS (cambia esto por el selector adecuado)
+			#elemento = driver.find_element_by_css_selector('.ad-preview')
+			#print(elemento)
+			# Haz clic en el elemento
+			#elemento.click()
 			# Crear un objeto de respuesta a partir de la cadena de contenido
 			container_response = TextResponse(body=container, url=response.url, encoding='utf-8')
 			 # Utiliza una expresión XPath para seleccionar el elemento div con el atributo data-lnk-href
@@ -37,7 +44,7 @@ class FeatureSpider(scrapy.Spider):
 					#"price_m2": price_m2,
 					"bathrooms": bathrooms,
 					#"size_construction": size_construction,
-					"size_construction": size_construction,
+					"size_construction": size,
 					"rooms": rooms,
 					"description": description,
 					#"floor": floor,
@@ -47,7 +54,6 @@ class FeatureSpider(scrapy.Spider):
 					#"last_updated": date
 				}
 				self.data.append(dataObject)
-
 
 
 		next_page = response.css('.pagination__next a::attr(href)').extract_first()
@@ -92,14 +98,14 @@ class FeatureSpider(scrapy.Spider):
 			"price": price,
 			"price_m2": price_m2,
 			"bathrooms": bathrooms,
-			"size_construction": size_construction.strip(':'),
-			"size": size.strip(':'),
+			"size_construction": size_construction,
+			"size": size,
 			"rooms": rooms,
 			"description": description,
 			"floor": floor.strip(':'),
 			"exterior": exterior,
-			"preservation": preservation.strip(':'),
-			"reference":reference.strip(':'),
+			"preservation": preservation,
+			"reference":reference,
 			"furniture": furniture,
 			"last_updated": date
 			#"images": ul
